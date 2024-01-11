@@ -1,10 +1,9 @@
 'use client';
 
 import { Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 import Sidebar from '@/components/shared/Sidebar';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { useEffect, useState } from 'react';
 
 const MobileSidebar = () => {
 	// fix hydration
@@ -20,10 +19,8 @@ const MobileSidebar = () => {
 
 	return (
 		<Sheet>
-			<SheetTrigger>
-				<Button variant='ghost' size='icon' className='md:hidden'>
-					<Menu />
-				</Button>
+			<SheetTrigger className='md:hidden'>
+				<Menu />
 			</SheetTrigger>
 			<SheetContent side='left' className='p-0'>
 				<Sidebar />
